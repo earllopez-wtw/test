@@ -23,16 +23,16 @@ import pandas as pd
 currency_conversion = {'AED': 0.27, 'HKD': 0.17, 'EUR': 1.18}
 
 # Define the DataFrame
-df = pd.DataFrame({
+curr_df = pd.DataFrame({
     'currency': ['AED', 'HKD', 'AED']
 })
 
-print("Before:\n", df)
+print("Before:\n", curr_df)
 
 # Add the new column
-df['CONVERSIONRATIO'] = df['currency'].map(currency_conversion)
+curr_df['CONVERSIONRATIO'] = curr_df['currency'].map(currency_conversion)
 
-print("\nAfter:\n", df)
+print("\nAfter:\n", curr_df)
 
 # COMMAND ----------
 
