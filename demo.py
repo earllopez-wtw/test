@@ -20,13 +20,4 @@ data = [
 customers = spark.createDataFrame(data, schema)
 # COMMAND ----------
 customers.show()
-
-# Output:
-#
-# +----------+---------+-------------------+
-# |CustomerID|FirstName|           LastName|
-# +----------+---------+-------------------+
-# |      1000|  Mathijs|Oosterhout-Rijntjes|
-# |      1001|    Joost|      van Brunswijk|
-# |      1002|     Stan|          Bokenkamp|
-# +----------+---------+-------------------+
+print(customers.count())
