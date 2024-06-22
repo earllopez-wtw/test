@@ -23,14 +23,14 @@ import pandas as pd
 currency_conversion = {'AED': 0.27, 'HKD': 0.17, 'EUR': 1.18}
 
 # Define the DataFrame
-df = pd.DataFrame({
+currency_df = pd.DataFrame({
     'currency': ['AED', 'HKD', 'AED']
 })
 
 print("Before:\n", df)
 
 # Add the new column
-df['CONVERSIONRATIO'] = df['currency'].map(currency_conversion)
+currency_df['CONVERSIONRATIO'] = currency_df['currency'].map(currency_conversion)
 
 print("\nAfter:\n", df)
 
@@ -42,13 +42,13 @@ from pyspark.sql.functions import *
 
 from pyspark.sql.functions import col
 
-df = spark.read.format("delta").load("/mnt/silver_1/incumbent")
-df = df.select(sorted(df.columns))
+currency_df= spark.read.format("delta").load("/mnt/silver_1/incumbent")
+currency_df= df.select(sorted(df.columns))
 df.printSchema()
 
 # COMMAND ----------
 
-# Get the schema of df as a list of StructField objects
+# Get the schema of currency_dfas a list of StructField objects
 schema_list = df.schema
 
 # Convert the list of StructField objects to a list of tuples
@@ -84,7 +84,7 @@ udm.printSchema()
 # COMMAND ----------
 
 mounts = dbutils.fs.mounts()
-mounts_df = spark.createDataFrame(mounts)
+mounts_currency_df= spark.createDataFrame(mounts)
 display(mounts_df)
 
 # COMMAND ----------
