@@ -94,3 +94,7 @@ files = dbutils.fs.ls(directory)
 for file in files:
     print(file.path)
 
+# COMMAND ----------
+
+print("updates from remote branch")
+
