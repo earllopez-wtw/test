@@ -42,13 +42,13 @@ from pyspark.sql.functions import *
 
 from pyspark.sql.functions import col
 
-currency_df= spark.read.format("delta").load("/mnt/silver_1/incumbent")
-currency_df= df.select(sorted(df.columns))
+incumbent_df = spark.read.format("delta").load("/mnt/silver_1/incumbent")
+incumbent_df = df.select(sorted(df.columns))
 df.printSchema()
 
 # COMMAND ----------
 
-# Get the schema of currency_dfas a list of StructField objects
+# Get the schema of incumbent_df as a list of StructField objects
 schema_list = df.schema
 
 # Convert the list of StructField objects to a list of tuples
@@ -84,7 +84,7 @@ udm.printSchema()
 # COMMAND ----------
 
 mounts = dbutils.fs.mounts()
-mounts_currency_df= spark.createDataFrame(mounts)
+mounts_df = spark.createDataFrame(mounts)
 display(mounts_df)
 
 # COMMAND ----------
