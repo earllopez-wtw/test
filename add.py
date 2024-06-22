@@ -1,7 +1,8 @@
 a = 2
 b = 2
 c = 1
-d = a + b + c
+d = 5
+e = a + b + c + d
 
-z = d
+z = e
 print(z)
