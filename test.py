@@ -96,4 +96,8 @@ for file in files:
 
 # COMMAND ----------
 
+print("updates from remote branch")
+
+# COMMAND ----------
+
 print("changes in my local")
